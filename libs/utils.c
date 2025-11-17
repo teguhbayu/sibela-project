@@ -10,27 +10,27 @@ void clrScr()
     printf("\e[1;1H\e[2J");
 }
 
-int getMaxX()
-{
-    struct winsize w;
-    if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &w) < 0)
-    {
-        perror("Error getting terminal dimensions");
-        return 1;
-    }
-    return w.ws_col;
-}
+// int getMaxX()
+// {
+//     struct winsize w;
+//     if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &w) < 0)
+//     {
+//         perror("Error getting terminal dimensions");
+//         return 1;
+//     }
+//     return w.ws_col;
+// }
 
-int getMaxY()
-{
-    struct winsize w;
-    if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &w) < 0)
-    {
-        perror("Error getting terminal dimensions");
-        return 1;
-    }
-    return w.ws_row;
-}
+// int getMaxY()
+// {
+//     struct winsize w;
+//     if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &w) < 0)
+//     {
+//         perror("Error getting terminal dimensions");
+//         return 1;
+//     }
+//     return w.ws_row;
+// }
 
 void readAndDrawAscii(char name[], int x, int y)
 {

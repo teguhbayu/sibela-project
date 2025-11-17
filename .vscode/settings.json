@@ -10,6 +10,11 @@
         "header.h": "c",
         "murid.h": "c",
         "initdb.h": "c",
-        "staf.h": "c"
+        "staf.h": "c",
+        "dbtypes.h": "c",
+        "curses.h": "c",
+        "drawview.h": "c",
+        "loginview.h": "c",
+        "homeview.h": "c"
     }
 }

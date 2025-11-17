@@ -2,10 +2,7 @@
 #define model
 
 #include <stdio.h>
-#include <ncurses.h>
-
-const int width = 100;
-const int height = 19;
+#include <curses.h>
 
 typedef enum
 {

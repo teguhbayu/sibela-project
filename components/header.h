@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "../libs/utils.h"
 #include <stdlib.h>
-#include <ncurses.h>
+#include <curses.h>
 
 void drawHeader(void);
 

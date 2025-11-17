@@ -10,7 +10,7 @@ void drawRootView(windowModel *window)
         break;
     case LOGIN:
         drawHeader();
-        drawLogin(window);
+        // drawLogin(window);
         break;
     case ADMINSTUDENT:
         break;
