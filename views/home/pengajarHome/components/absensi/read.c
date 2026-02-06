@@ -61,7 +61,7 @@ void drawAbsensiPengajarRead(windowModel *windowM)
                              start_y - cell_height + padding},
                    font_size, 0,
                    SIBELAWHITE);
-        DrawTextEx(windowM->fontStyle.regular, "Alasan",
+        DrawTextEx(windowM->fontStyle.regular, "Alasan (Hover untuk ketik)",
                    (Vector2){start_x + 2 * cell_width + padding,
                              start_y - cell_height + padding},
                    font_size, 0,
@@ -142,7 +142,7 @@ void drawAbsensiPengajarRead(windowModel *windowM)
                                       .y = 1080 - 200,
                                       .width = 200,
                                       .height = 80};
-            if (GuiButton(submitButton, "Kumpulkan", 0))
+            if (GuiButton(submitButton, "Simpan (klik)", 0))
             {
                 QUERYSTATUS resSql = windowM->pengajarHomeState.absensiPage.submitFunc(windowM->datas.muridAbsensis, windowM->datas.nMuridAbsensi, windowM->focusedData.jadwal.id_pertemuan, windowM->dbConn, windowM->authUser);
                 if (resSql == SUCCESS)

@@ -73,8 +73,9 @@ void drawPembayaranReport(windowModel *windowM)
                              start_y + row * cell_height + padding},
                    font_size, 0,
                    SIBELAWHITE);
-        DrawTextEx(windowM->fontStyle.regular, TextFormat("Rp.%ld", windowM->datas.pembayarans[row].jumlah_pembayaran),
-                   (Vector2){start_x + 2 * cell_width + padding,
+        Vector2 measuredTotal = MeasureTextEx(windowM->fontStyle.regular, formatMoneyWithSeparator(windowM->datas.pembayarans[row].jumlah_pembayaran), font_size, 0);
+        DrawTextEx(windowM->fontStyle.regular, formatMoneyWithSeparator((double)windowM->datas.pembayarans[row].jumlah_pembayaran),
+                   (Vector2){start_x + 3 * cell_width - padding - measuredTotal.x,
                              start_y + row * cell_height + padding},
                    font_size, 0,
                    SIBELAWHITE);
@@ -99,8 +100,8 @@ void drawPembayaranReport(windowModel *windowM)
                40, 0,
                SIBELAWHITE);
 
-    DrawMetricCard("Total Pembayaran", TextFormat("Rp. %d", windowM->datas.pembayaranReport.sumThisMonth), (Vector2){start_x, 330}, 200, &windowM->fontStyle);
-    DrawMetricCard("Jumlah Pembayaran", TextFormat("%d", windowM->datas.pembayaranReport.totalThisMonth), (Vector2){start_x + 210, 330}, 200, &windowM->fontStyle);
+    DrawMetricCard("Total Pembayaran", formatMoneyWithSeparator((double)windowM->datas.pembayaranReport.sumThisMonth), (Vector2){start_x, 330}, 230, &windowM->fontStyle);
+    DrawMetricCard("Jumlah Pembayaran", TextFormat("%d", windowM->datas.pembayaranReport.totalThisMonth), (Vector2){start_x + 240, 330}, 200, &windowM->fontStyle);
     dateRangeSelector(windowM, (Vector2){start_x, 200});
     drawPieChart(windowM, (Vector2){1920 - 285, 250}, windowM->datas.pembayaranReport.total_tunai, windowM->datas.pembayaranReport.total_transfer, "Tunai", "Transfer", "Jumlah Pembayaran", 1);
     drawPieChart(windowM, (Vector2){1920 - 285 - 460 - 20, 250}, windowM->datas.pembayaranReport.count_tunai, windowM->datas.pembayaranReport.count_transfer, "Tunai", "Transfer", "Total Pembayaran Dilakukan", 0);

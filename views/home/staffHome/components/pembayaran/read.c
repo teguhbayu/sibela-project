@@ -122,17 +122,4 @@ void drawPembayaranRead(windowModel *windowM)
                (Vector2){start_x, start_y + (row * cell_height) + 30},
                40, 0,
                SIBELAWHITE);
-    if (windowM->isModalShown)
-    {
-        int res = GuiMessageBox((Rectangle)(Rectangle){.height = 400, .width = 800, .x = 300 + 1620 / 2 - 400, .y = 1080 / 2 - 200}, "Delete Jadwal?", TextFormat("Apakah anda ingin menghapus Jadwal %s?", windowM->focusedData.jadwal.id_pertemuan), "Batal;Hapus!");
-
-        if (res == 2)
-        {
-            // deleteJadwalPertemuan(windowM->dbConn, windowM->focusedData.jadwal);
-            windowM->dataFetchers.staffPage[windowM->selectedPage](&windowM->datas, &windowM->datas.totalPages, windowM->dbConn, NULL);
-            windowM->isModalShown = 0;
-        }
-        else if (res >= 0 && res < 2)
-            windowM->isModalShown = 0;
-    }
 }

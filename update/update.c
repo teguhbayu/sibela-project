@@ -204,12 +204,18 @@ void updateView(windowModel *windowM)
                     }
                     break;
                 case KEY_D:
-                    if (windowM->selectedPage == PEMBAYARANREPORT)
+                    switch (windowM->selectedPage)
+                    {
+                    case PEMBAYARAN:
+                    case PEMBAYARANREPORT:
                         break;
-                    windowM->isModalShown = 1;
+                    default:
+                        windowM->isModalShown = 1;
+                        break;
+                    }
                     break;
                 case KEY_U:
-                    if (windowM->selectedPage == PEMBAYARANREPORT)
+                    if (windowM->selectedPage == PEMBAYARANREPORT || windowM->selectedPage == PEMBAYARAN)
                         break;
                     switch (windowM->selectedPage)
                     {

@@ -35,7 +35,10 @@ void drawPieChart(windowModel *windowM, Vector2 pos, int value1, int value2, cha
         if (values[i] > 0)
         {
             char labelText[64] = {0};
-            snprintf(labelText, 64, "%s\n%s%d(%.0f%%)", labels[i], isMoney ? "Rp " : "", (int)values[i], (values[i] / totalValue) * 100.0f);
+            if (isMoney)
+                snprintf(labelText, 64, "%s\n%s(%.0f%%)", labels[i], formatMoneyWithSeparator((double)values[i]), (values[i] / totalValue) * 100.0f);
+            else
+                snprintf(labelText, 64, "%s\n%d(%.0f%%)", labels[i], (int)values[i], (values[i] / totalValue) * 100.0f);
 
             Vector2 textSize = MeasureTextEx(GetFontDefault(), labelText, 20, 1);
             float labelRadius = radius * 0.7f;
