@@ -57,8 +57,8 @@ void copyStringData(char src[], InputParams *dest)
 
 void copySelectData(char label[], char value[], SelectProp *dest)
 {
-    strncpy(dest->label, label, 99);
-    dest->label[99] = '\0';
+    strncpy(dest->label, label, 49);
+    dest->label[49] = '\0';
     strncpy(dest->value, value, 99);
     dest->value[99] = '\0';
 }

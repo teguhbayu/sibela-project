@@ -17,20 +17,20 @@ void showToast(TOAST *toast, char title[], char message[])
 void initForm(windowModel *windowM)
 {
     windowM->forms.staffPage[MANAJERSTAFF].fields[1] = (InputField){.label = "Nama", .type = TEXTINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
-    windowM->forms.staffPage[MANAJERSTAFF].fields[2] = (InputField){.label = "Tanggal Lahir", .type = BIRTHDATEINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
+    windowM->forms.staffPage[MANAJERSTAFF].fields[2] = (InputField){.label = "Tanggal Lahir (YYYY-MM-DD)", .type = BIRTHDATEINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[MANAJERSTAFF].fields[3] = (InputField){.label = "No. HP", .type = PHONENOINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[MANAJERSTAFF].fields[4] = (InputField){.label = "Password", .type = TEXTINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[MANAJERSTAFF].fields[5] = (InputField){.label = "Email", .type = EMAILINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[MANAJERSTAFF].fields[6] = (InputField){.label = "Role", .type = ROLEINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[MANAJERSTAFF].fields[7] = (InputField){.label = "Submit", .type = BUTTONINPUT};
     windowM->forms.staffPage[MURID].fields[1] = (InputField){.label = "Nama", .type = TEXTINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
-    windowM->forms.staffPage[MURID].fields[2] = (InputField){.label = "Tanggal Lahir", .type = BIRTHDATEINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
+    windowM->forms.staffPage[MURID].fields[2] = (InputField){.label = "Tanggal Lahir (YYYY-MM-DD)", .type = BIRTHDATEINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[MURID].fields[3] = (InputField){.label = "No HP", .type = PHONENOINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[MURID].fields[4] = (InputField){.label = "Password", .type = TEXTINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[MURID].fields[5] = (InputField){.label = "Tingkat", .type = TINGKATINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[MURID].fields[6] = (InputField){.label = "Submit", .type = BUTTONINPUT};
     windowM->forms.staffPage[PENGAJAR].fields[1] = (InputField){.label = "Nama", .type = TEXTINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
-    windowM->forms.staffPage[PENGAJAR].fields[2] = (InputField){.label = "Tanggal Lahir", .type = BIRTHDATEINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
+    windowM->forms.staffPage[PENGAJAR].fields[2] = (InputField){.label = "Tanggal Lahir (YYYY-MM-DD)", .type = BIRTHDATEINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[PENGAJAR].fields[3] = (InputField){.label = "No HP", .type = PHONENOINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[PENGAJAR].fields[4] = (InputField){.label = "Password", .type = TEXTINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[PENGAJAR].fields[5] = (InputField){.label = "Submit", .type = BUTTONINPUT};
@@ -85,7 +85,7 @@ void initForm(windowModel *windowM)
     windowM->forms.staffPage[JADWAL].fields[1] = (InputField){.label = "PENGAJAR", .type = CUSTOMMODAL, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[JADWAL].fields[2] = (InputField){.label = "RUANGAN", .type = CUSTOMMODAL, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[JADWAL].fields[3] = (InputField){.label = "MATERI", .type = CUSTOMMODAL, .value = (InputParams){.charLen = 0, .text = ""}};
-    windowM->forms.staffPage[JADWAL].fields[4] = (InputField){.label = "WAKTU", .type = DATETIMEINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
+    windowM->forms.staffPage[JADWAL].fields[4] = (InputField){.label = "WAKTU (YYYY-MM-DD HH:MM:SS)", .type = DATETIMEINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[JADWAL].fields[5] = (InputField){.label = "MURID", .type = CUSTOMMODALMULTI, .value = (InputParams){.charLen = 0, .multiValue = {}}};
     windowM->forms.staffPage[JADWAL].fields[6] = (InputField){.label = "SUBMIT", .type = BUTTONINPUT, .value = (InputParams){.charLen = 0, .text = ""}};
     windowM->forms.staffPage[JADWAL].optionFetcher[1] = findAllPengajarSelect;
